@@ -10,6 +10,7 @@ Date: 7 March 2024
 /// Node Modules
 const express = require("express")
 const express_handlebars = require('express-handlebars')
+const https = require('https')
 
 /// Local Modules
 const tools = require('./tools')
@@ -85,6 +86,6 @@ app.get("*", function (req, res)  {
  *   ##SERVER INITIALIZATION##
  ********************************************/
 
-app.listen(port, undefined,function () {
-    console.log("SERVER: I'm listening http://localhost:"+port)
+https.createServer(app).listen(port, undefined,function () {
+    console.log("SERVER: I'm listening https://localhost:"+port)
 })
