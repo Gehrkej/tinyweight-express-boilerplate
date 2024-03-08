@@ -4,3 +4,7 @@
 
 # SSL Certifications
 *.pem
+*.crl
+*.crt
+*.csr
+*.key
