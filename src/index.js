@@ -10,15 +10,12 @@ Date: 7 March 2024
 /// Node Modules
 const express = require("express")
 const express_handlebars = require('express-handlebars')
-const fs = require("fs")
 
 /// Local Modules
 const tools = require('./tools')
 
 /// Flat Files
 const _package = require("../package.json")
-
-let projectID_cache = []
 
 /********************************************
  *   ##SERVER SETTINGS##
@@ -60,7 +57,7 @@ app.get("/module.js", function (req, res, next) {
  *   ##ROUTE HELPERS##
  ********************************************/
 
-let serveHomepage = function (req, res, next) {
+let serveHomepage = function (req, res) {
     res.status(200).render("view_index", {
         "toolVersion" : _package.version,
     })
@@ -78,7 +75,7 @@ app.get("/", serveHomepage)
 /**
  * 404 - final fallthrough reached
  */
-app.get("*", function (req, res, next)  {
+app.get("*", function (req, res)  {
     res.status(404).render("err_notFound", {
         "toolVersion" : _package.version
     })
