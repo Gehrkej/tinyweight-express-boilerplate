@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <a href="../"><h1>Tinyweight Express Boilerplate <span id="versionNumber">v{{toolVersion}}</span></h1></a>
+    <a href="../"><h1>Tinyweight Express Boilerplate <span id="versionNumber">v{{package.version}}</span></h1></a>
 
 {{{body}}}
 
@@ -16,6 +16,7 @@
 
 <footer>
     <hr>
-    <span>StartOut 2024</span>
+    <span><a href="{{package.author.url}}">StartOut 2024</a></span><br>
+    <span><a href="mailto:{{package.author.email}}">{{package.author.name}}</a></span><br>
 </footer>
 </html>

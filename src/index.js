@@ -10,6 +10,7 @@ Date: 7 March 2024
 /// Node Modules
 const express = require("express")
 const express_handlebars = require('express-handlebars')
+const fs = require('fs')
 const https = require('https')
 
 /// Local Modules
@@ -60,7 +61,7 @@ app.get("/module.js", function (req, res, next) {
 
 let serveHomepage = function (req, res) {
     res.status(200).render("view_index", {
-        "toolVersion" : _package.version,
+        "package" : _package,
     })
 }
 
@@ -86,6 +87,13 @@ app.get("*", function (req, res)  {
  *   ##SERVER INITIALIZATION##
  ********************************************/
 
-https.createServer(app).listen(port, undefined,function () {
+https
+    .createServer(
+        {
+            key: fs.readFileSync("out/localhost.key"),
+            cert: fs.readFileSync("out/localhost.crt")
+        },
+        app
+    ).listen(port, undefined,function () {
     console.log("SERVER: I'm listening https://localhost:"+port)
 })
