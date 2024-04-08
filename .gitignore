@@ -1,1 +1,10 @@
+# Development directories
 /node_modules/
+/.dev/
+
+# SSL Certifications
+*.pem
+*.crl
+*.crt
+*.csr
+*.key

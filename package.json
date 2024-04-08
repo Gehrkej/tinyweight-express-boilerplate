@@ -18,6 +18,11 @@
   "keywords": [
     "prototype"
   ],
-  "author": "trentonyo",
+  "author": {
+    "name": "TrentonYo",
+    "email": "askstartout@gmail.com",
+    "url": "https://github.com/Start-Out"
+
+  },
   "contributors": []
 }
