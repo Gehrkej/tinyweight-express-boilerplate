@@ -41,6 +41,18 @@ npm install
 
 This will clone a version of this boilerplate into place under a directory called `express-server` in the current directory (that's the last bit of the above commands, feel free to change that)
 
+## Detach from submodules
+
+If you need to be able to commit local changes (which seems pretty likely!) you'll need to detach the submodule. This script should do it:
+
+```bash
+mv express-server express-server_tmp
+git submodule deinit express-server
+git rm --cached express-server
+mv express-server_tmp express-server
+git add express-server
+```
+
 # Run your tiny server
 
 A couple of run scripts are included
