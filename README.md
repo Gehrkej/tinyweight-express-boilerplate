@@ -6,6 +6,10 @@ A boilerplate/starter project that's barely one step above prototyping with `ind
 
 # Quick Start
 
+> ## NOTE: HTTPS
+> The default configuration expects CA Certificates (`./src/out/localhost.key` and `./src/out/localhost.crt`). If you just need
+> an unsecured connection, see the end of `./src/index.js` and comment out the `https.createServer()` in favor of `app.listen()`.
+
 ## Start from scratch
 
 Install Node.js and GitHub CLI. Clone the repo. Navigate into the directory you just cloned, and install all dependencies with NPM.
