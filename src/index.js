@@ -97,3 +97,13 @@ https
     ).listen(port, undefined,function () {
     console.log("SERVER: I'm listening https://localhost:"+port)
 })
+
+/**
+ * Uncomment this section and remove the above to use unsecured 
+ * HTTP instead of HTTPS:
+ *
+ 
+app.listen(port, undefined,function () {
+    console.log("SERVER: I'm listening http://localhost:"+port)
+})
+ */
