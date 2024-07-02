@@ -12,6 +12,7 @@ const express = require("express")
 const express_handlebars = require('express-handlebars')
 const fs = require('fs')
 const https = require('https')
+const morgan = require('morgan')
 
 /// Local Modules
 const tools = require('./tools')
@@ -45,6 +46,12 @@ app.use(express.json())
  * Serve static files
  */
 app.use(express.static("public/"))
+
+/**
+ * Morgan is a popular logger.
+ */
+app.use(morgan("dev"))
+
 
 /**
  * Serve required module source without giving out internal path
